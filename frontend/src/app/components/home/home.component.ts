@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeticionService } from '../../peticion/peticion.service';
+import { AuthStateService } from '../../shared/auth-state.service';
+import { Router } from '@angular/router';
+import { TokenService } from '../../shared/token.service';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +12,20 @@ import { PeticionService } from '../../peticion/peticion.service';
 export class HomeComponent implements OnInit {
   errors: any = null;
   peticiones: any[] = [];
+  isSignedIn!: boolean;
 
-  constructor(private peticionService: PeticionService) { }
+  constructor(
+    private peticionService: PeticionService,
+    private auth: AuthStateService,
+    public router: Router,
+    public token: TokenService
+  ) { }
 
   ngOnInit(): void {
-    this.pillarPeticiones(); 
+    this.pillarPeticiones();
+    this.auth.userAuthState.subscribe((val) => {
+      this.isSignedIn = val;
+    });
   }
 
   pillarPeticiones(): void {
