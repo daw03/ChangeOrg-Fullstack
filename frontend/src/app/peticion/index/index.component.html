@@ -3,28 +3,45 @@
     <div class="col-md-12">
       <h1>Lista de Peticiones</h1>
       <div *ngIf="peticiones.length > 0; else noPeticiones">
-        <div class="row">  <div *ngFor="let peticion of peticiones" class="col-md-6 col-sm-12"> <div class="card mb-3">
+        <div class="row">
+          <div *ngFor="let peticion of peticiones" class="col-md-6 col-sm-12">
+            <div class="card mb-3">
               <div class="card-header">
                 {{ peticion.titulo }}
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Descripción:</strong> {{ peticion.descripcion }}</p>
-                <p class="card-text"><strong>Destinatario:</strong> {{ peticion.destinatario }}</p>
-                <p class="card-text"><strong>Estado:</strong> {{ peticion.estado }}</p>
-                <p class="card-text"><strong>Categoría:</strong> {{ peticion.categoria_id }}</p>
-                <p class="card-text"><strong>Fecha de Creación:</strong> {{ peticion.created_at }}</p>
-                <p class="card-text"><strong>ID Usuario:</strong> {{ peticion.user_id }}</p>
+                <p class="card-text">
+                  <strong>Descripción:</strong> {{ peticion.descripcion }}
+                </p>
+                <p class="card-text">
+                  <strong>Destinatario:</strong> {{ peticion.destinatario }}
+                </p>
+                <p class="card-text">
+                  <strong>Estado:</strong> {{ peticion.estado }}
+                </p>
+                <p class="card-text">
+                  <strong>Categoría:</strong> {{ peticion.categoria_id }}
+                </p>
+                <p class="card-text">
+                  <strong>Fecha de Creación:</strong> {{ peticion.created_at }}
+                </p>
+                <p class="card-text">
+                  <strong>ID Usuario:</strong> {{ peticion.user_id }}
+                </p>
                 <p class="card-text"><strong>ID:</strong> {{ peticion.id }}</p>
-                <p class="card-text"><strong>Firmantes:</strong> {{ peticion.firmantes }}</p>
+                <p class="card-text">
+                  <strong>Firmantes:</strong> {{ peticion.firmantes }}
+                </p>
               </div>
             </div>
           </div>
-        </div> </div>
+        </div>
+      </div>
       <ng-template #noPeticiones>
         <p>No hay peticiones para mostrar.</p>
       </ng-template>
       <div *ngIf="errors">
-        <p>Error: {{errors}}</p>
+        <p>Error: {{ errors }}</p>
       </div>
     </div>
   </div>

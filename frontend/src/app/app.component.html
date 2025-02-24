@@ -18,7 +18,7 @@
       style="background-color: #f8cece"
     >
       <div class="container">
-        <a class="navbar-brand text-danger" href="#">
+        <a class="navbar-brand text-danger" routerLink="/">
           <img
             src="assets/pngegg.png"
             alt="Change.org"
@@ -41,24 +41,20 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link text-danger" href="show">Peticiones</a>
+              <a class="nav-link text-danger" routerLink="/show">Peticiones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger" href="petition/create"
-                >Iniciar una petición</a
-              >
+              <a class="nav-link text-danger" routerLink="/petition/create">Iniciar una petición</a>
             </li>
           </ul>
 
           <ul class="navbar-nav ms-auto">
             <!-- Si no está autenticado -->
             <li *ngIf="!isSignedIn" class="nav-item">
-              <a class="btn btn-danger m-1" href="login">Iniciar sesión</a>
+              <a class="btn btn-danger m-1" routerLink="/login">Iniciar sesión</a>
             </li>
             <li *ngIf="!isSignedIn" class="nav-item">
-              <a class="btn btn-outline-light m-1" href="register"
-                >Regístrate</a
-              >
+              <a class="btn btn-outline-light m-1" routerLink="/register">Regístrate</a>
             </li>
 
             <!-- Si está autenticado -->
@@ -68,7 +64,7 @@
               </button>
             </li>
             <li *ngIf="isSignedIn" class="nav-item">
-              <a class="btn btn-outline-light m-1" href="profile">Perfil</a>
+              <a class="btn btn-outline-light m-1" routerLink="/profile">Perfil</a>
             </li>
           </ul>
         </div>
@@ -82,8 +78,8 @@
     <footer class="bg-light py-4">
       <div class="container text-center">
         <p>
-          &copy; 2024 Change.org | <a href="#">Privacy Policy</a> |
-          <a href="#">Terms of Service</a>
+          &copy; 2024 Change.org | <a routerLink="#">Privacy Policy</a> |
+          <a routerLink="#">Terms of Service</a>
         </p>
       </div>
     </footer>
