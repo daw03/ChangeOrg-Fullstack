@@ -14,6 +14,7 @@ export class CreateComponent implements OnInit {
   peticionForm!: FormGroup;
   errors: any = null;
   peticion!: Peticion;
+  isSignedIn!: boolean;
 
   constructor(
     public router: Router,
@@ -28,7 +29,8 @@ export class CreateComponent implements OnInit {
       destinatario: new FormControl('', [Validators.required]),
       categoria_id: new FormControl('', [Validators.required]),
     });
-    this.token
+    this.token;
+    this.isSignedIn = this.token.isLoggedIn();
   }
 
   onSubmit() {
