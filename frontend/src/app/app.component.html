@@ -50,7 +50,7 @@
 
           <ul class="navbar-nav ms-auto">
             <!-- Si no está autenticado -->
-            <li *ngIf="!isSignedIn" class="nav-item">
+            <li *ngIf="isSignedIn" class="nav-item">
               <a class="btn btn-danger m-1" routerLink="/login">Iniciar sesión</a>
             </li>
             <li *ngIf="!isSignedIn" class="nav-item">
