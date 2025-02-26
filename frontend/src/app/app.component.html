@@ -43,7 +43,7 @@
             <li class="nav-item">
               <a class="nav-link text-danger" routerLink="/show">Peticiones</a>
             </li>
-            <li class="nav-item">
+            <li *ngIf="!isSignedIn" class="nav-item">
               <a class="nav-link text-danger" routerLink="/petition/create">Iniciar una petición</a>
             </li>
           </ul>
